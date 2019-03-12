@@ -2,26 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
 
+## Setup
+1. Install lastest angular CLI using node
+2. Import the project and run the command 'npm install' in the root directory to install all plugins.
+
+## Configuration (OPTIONAL)
+If you would like to point the service layer to your own docker, modify this line:
+baseUrl = 'http://18.222.230.128:8080'; in the file src/app/rest.service.ts
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## OnScale Specific
+1. After running the app locally, build the project using:
+`ng build --base-href=lib/`
+A directory named `dist` is created.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Move all files of `dist` (except index.html) to a directory inside `dist` called `lib`. The `dist` folder should contain:
+- a folder called `lib`
+- an `index.html` file
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+These files would be copied to the node project before running te docker file as we want to create a single node server for the client and server applications.
