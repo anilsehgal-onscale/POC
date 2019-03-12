@@ -11,7 +11,7 @@ To open this project in Android Studo:
 # Change the url (OPTIONAL)
 go to org.diego.android.crosswalkdemo.MainActivity
 
-Modify this like to point to your remote docker:
+Modify this to point to your remote docker:
 xWalkWebView.load("http://18.222.230.128:8080", null);
 
 # Run
