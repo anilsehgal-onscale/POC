@@ -1,0 +1,16 @@
+.table {
+  width: 100%;
+}
+.table-row {
+  display: flex;
+}
+.table-column {
+  width: 25%;
+  padding: 10px;
+}
+.table-column-header {
+  width: 25%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
